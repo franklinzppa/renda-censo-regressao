@@ -1,6 +1,5 @@
-SELECT sigla_uf, situacao_domicilio, v0203 AS comodos, v0205 AS condicao_domicilio, v0209 AS banheiros, v7100 AS moradores, v0110 AS homens, v0111 AS mulheres,v0207 AS agua, v0212 AS coleta_lixo, v0213 AS iluminacao, v0214 AS radio, v0215 AS geladeira, v0216 AS videocassete, v0217 AS maquina_lavar, v0218 AS microondas, v0219 as telefone, v0220 as computador, v0221 as televisores, v0222 as automoveis, v0223 as ar_condicionado, v7100 as iluminacao_publica, v1113 as pavimentacao, v7616 AS rendimento 
-FROM `basedosdados.br_ibge_censo_demografico.microdados_domicilio_2000` LIMIT 1000
-
-# Verificar NaN
-# Fazer amostragem de 500 por estado
-# Fazer algumas explorações
+SELECT sigla_uf, situacao_domicilio, v0203 AS comodos, v0205 AS condicao_domicilio, v0209 AS banheiros, v7100 AS moradores, v0110 AS homens, v0111 AS mulheres,v0207 AS agua, v0212 AS coleta_lixo, v0213 AS iluminacao, v0214 AS radio, v0215 AS geladeira, v0216 AS videocassete, v0217 AS maquina_lavar, v0218 AS microondas, v0219 as telefone, v0220 as computador, v0221 as televisores, v0222 as automoveis, v0223 as ar_condicionado, v7100 as iluminacao_publica, v1113 as pavimentacao, v7616 AS rendimento
+FROM `basedosdados.br_ibge_censo_demografico.microdados_domicilio_2000`
+WHERE v7616 IS NOT NULL AND (v7616 > 0)
+ORDER BY RAND() 
+LIMIT 5000;
