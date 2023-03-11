@@ -127,3 +127,6 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+
+# Cloud certificate
+renda-censo-regressao-0d5cd82b3cac.json
